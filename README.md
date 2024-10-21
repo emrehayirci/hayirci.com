@@ -1,2 +1,1 @@
 # hayirci.com
-Nope
