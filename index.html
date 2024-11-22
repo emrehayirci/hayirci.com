@@ -1,101 +1,18 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hayirci.com</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            background-color: #293146;
-            overflow: hidden;
-        }
-        #text-container {
-            color: #E2E0D1;
-            font-size: 8vw;
-            font-weight: 400;
-            line-height: 1.2;
-            text-align: center;
-            margin: 0;
-            
-            /* Consistent text rendering properties */
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            
-            /* Force same width */
-            width: 100%;
-        }
-        @keyframes fontSwap {
-            0%, 100% { font-family: 'Times New Roman', serif; }
-            20% { font-family: 'Happy Monkey', Arial, serif; }
-            40% { font-family: 'Averia Libre', Arial, system-ui; }
-            60% { font-family: 'Rubik Vinyl', Arial, system-ui; }
-            80% { font-family: 'Montserrat', Arial, sans-serif; }
-        }
-        .font-swap-animation {
-            animation: fontSwap 10s infinite;
-        }
-    </style>
-    <script>
-        (function() {
-            const fonts = [
-                { family: 'Happy Monkey', url: 'https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap' },
-                { family: 'Averia Libre', url: 'https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap' },
-                { family: 'Rubik Vinyl', url: 'https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap' },
-                { family: 'Titan One', url: 'https://fonts.googleapis.com/css2?family=Titan+One&display=swap' },
-            ];
-
-             // Create a link preconnect tag
-             var link = document.createElement('link');
-                link.rel = 'preconnect';
-                link.href = 'https://fonts.googleapis.com';
-                document.head.appendChild(link);
-
-            link = document.createElement('link');
-            link.rel = 'preconnect';
-            link.href = 'https://fonts.gstatic.com';
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-
-                
-            // Load all fonts asynchronously
-            Promise.all(fonts.map(font => {
-            return new Promise((resolve, reject) => {
-                var link = document.createElement('link');
-                link.href = font.url;
-                link.rel = 'stylesheet';
-                link.onload = resolve;
-                link.onerror = reject;
-                document.head.appendChild(link);
-            });
-            })).then(loadedFonts => {
-                document.getElementById('text-container').classList.add('font-swap-animation');
-            }).catch(error => {
-                console.error('Font loading failed:', error);
-            });
-        })();
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75HS0BZ64N"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-75HS0BZ64N');
-    </script>
-</head>
-<body>
-    <div id="text-container">
-        <h1>HAYIR</h1>
-    </div>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/android-chrome-192x192.png">
+    <link rel="shortcut icon" href="/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emre Hayirci</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
