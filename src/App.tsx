@@ -37,7 +37,7 @@ const LandingPage = () => {
             {/* Blog Button */}
             <Button 
               className="w-full max-w-md bg-black hover:bg-[#ff9900] text-white py-6 text-xl font-semibold rounded-full transform transition-all duration-300 hover:scale-105 shadow-md title-text"
-              onClick={() => window.open('https://emre.hayirci.com', '_blank')}
+              onClick={() => window.open('https://emrehayirci.substack.com?utm_source=hayirci.com&utm_medium=page&utm_campaign=directlink&utm_id=blog', '_blank')}
             >
               <BookOpen className="mr-3 h-6 w-6" />
               Read My Blog
